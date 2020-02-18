@@ -1,1 +1,9 @@
-node_modules
+node_modules/
+generated/
+dist/
+.vscode/
+/scripts/
+
+*.env
+.DS_Store
+*.swp

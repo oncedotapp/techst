@@ -1,0 +1,10 @@
+endpoint: ${env:PRISMA_SERVER}/${env:PRISMA_SERVICE}/${env:PRISMA_STAGE}
+datamodel:
+  - ./datamodel.prisma
+generate:
+  - generator: typescript-client
+    output: ./generated/prisma-client/
+secret: ${env:PRISMA_SECRET}
+
+# seed:
+#   run: /app/node_modules/.bin/ts-node ./src/seeds/index.ts

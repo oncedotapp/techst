@@ -9,6 +9,9 @@ import {
   SERVER_PORT,
 } from './config/env';
 
+import AuthModule from './modules/Auth';
+import UserModule from './modules/User';
+
 checkRequiredEnvVars();
 
 /**
@@ -33,25 +36,7 @@ app.get(
 // Merge required modules into one
 const MergeModule = new GraphQLModule({
   name: 'TechstMerge',
-  imports: [
-    // AnalyticsModule,
-    // AuthModule,
-    // BlockOptionModule,
-    // CardModule,
-    // FieldModule,
-    // FileModule,
-    // FontModule,
-    // ItemModule,
-    // ProfileModule,
-    // SessionModule,
-    // StoryModule,
-    // TagModule,
-    // ThirdPartyApisModule,
-    // TsvExportModule,
-    // UploadModule,
-    // UserModule,
-    // VoteModule,
-  ],
+  imports: [AuthModule, UserModule],
 });
 
 const { schema } = MergeModule;

@@ -1,5 +1,6 @@
 const requiredEnvVars: string[] = [
   'NODE_ENV',
+  'APP_SECRET',
   'SERVER_PORT',
   'REDIS_HOST',
   'REDIS_PORT',
@@ -17,6 +18,7 @@ export function checkRequiredEnvVars(): void {
 }
 
 export const NODE_ENV = (process.env.NODE_ENV as string);
+export const APP_SECRET = (process.env.APP_SECRET as string);
 export const SERVER_PORT = (process.env.SERVER_PORT as string);
 export const REDIS_HOST = (process.env.REDIS_HOST as string);
 export const REDIS_PORT = (process.env.REDIS_PORT as string);

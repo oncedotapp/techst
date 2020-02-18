@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 services:
   prisma:
     image: prismagraphql/prisma:1.34
@@ -31,9 +31,9 @@ services:
       POSTGRES_USER: claptrap
       POSTGRES_PASSWORD: Cl4P-Tp42
     volumes:
-    - type: volume
-      source: postgres
-      target: /var/lib/postgresql/data
+      - type: volume
+        source: techst_db
+        target: /var/lib/postgresql/data
     networks:
       techst_network:
         aliases:
@@ -51,8 +51,7 @@ services:
       REDIS_PORT: 6379
     build:
       context: .
-      dockerfile: api.dockerfile
-      target: dev-mode # do not copy code in /app since we share it through a bind volume
+      dockerfile: ./api.dockerfile
     networks:
       - techst_network
     depends_on:
@@ -73,7 +72,7 @@ services:
           - redis.techst.once
 
 volumes:
-  postgres:
+  techst_db:
 
 networks:
   techst_network:

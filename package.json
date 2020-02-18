@@ -4,7 +4,7 @@
   "description": "Backend used for the Technical Test (the Techst for those in the know)",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --transpileOnly --watch src,generated src/services/editor.ts",
+    "dev": "ts-node-dev --transpileOnly --watch src,generated src/index.ts",
     "lint": "eslint --ext ts src/"
   },
   "pre-commit": "lint",

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import GlobalStyles from '../../globalStyles';
+// import CodeInput from '../../components/CodeInput';
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
@@ -14,7 +15,7 @@ const AppWrapper = styled.div`
 
 const App: React.FC = () => (
   <AppWrapper>
-    <div>Coucou2</div>
+    {/* <CodeInput /> */}
     <GlobalStyles />
   </AppWrapper>
 );

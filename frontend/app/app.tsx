@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ApolloProvider } from '@apollo/react-hooks';
+
 import 'sanitize.css/sanitize.css';
 
+import { apolloClient } from './apollo';
 import App from './containers/App';
 
 // Create redux store with history
 const MOUNT_NODE = document.getElementById('app') as HTMLElement;
 
 const render = (Component = App): void => {
-  ReactDOM.render(<Component />, MOUNT_NODE);
+  ReactDOM.render(
+    <ApolloProvider client={apolloClient}>
+      <Component />
+    </ApolloProvider>,
+    MOUNT_NODE,
+  );
 };
 
 if (module.hot) {

@@ -24,6 +24,7 @@
     "noUnusedLocals": false,
     "strict": true,
     "strictFunctionTypes": false,
+    "types": ["node", "webpack-env"],
     "pretty": true,
     "removeComments": true,
     "sourceMap": true

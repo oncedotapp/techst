@@ -16,7 +16,7 @@
     "start": "cross-env NODE_ENV=development node server",
     "start:production": "npm run test && npm run build && npm run start:prod",
     "start:prod": "cross-env NODE_ENV=production node server",
-    "lint": "npm run lint:js && npm run lint:css",
+    "lint": "npm run lint:js",
     "lint:css": "stylelint './app/**/*.{js,ts,jsx,tsx}'",
     "lint:js": "eslint --ext .js,.jsx,.ts,.tsx app",
     "typecheck": "tsc --noEmit"
@@ -57,6 +57,9 @@
     "@babel/preset-react": "7.8.3",
     "@babel/preset-typescript": "^7.8.3",
     "@babel/register": "7.8.3",
+    "@storybook/addon-actions": "^5.3.13",
+    "@storybook/addon-knobs": "^5.3.13",
+    "@storybook/addons": "^5.3.13",
     "@storybook/react": "^5.3.13",
     "@testing-library/react": "9.4.0",
     "@types/express": "4.17.2",

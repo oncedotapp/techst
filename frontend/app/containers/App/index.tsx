@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import GlobalStyles from '../../globalStyles';
+
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
   margin: 0 auto;
@@ -13,6 +15,7 @@ const AppWrapper = styled.div`
 const App: React.FC = () => (
   <AppWrapper>
     <div>Coucou2</div>
+    <GlobalStyles />
   </AppWrapper>
 );
 

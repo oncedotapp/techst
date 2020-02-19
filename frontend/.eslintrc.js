@@ -97,6 +97,13 @@ module.exports = {
     'react/require-extension': 0,
     'react/self-closing-comp': 0,
     'react/sort-comp': 0,
+    'react/prop-types': 0,
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      {
+        allowExpressions: true
+      },
+]
   },
   settings: {
     'import/resolver': {

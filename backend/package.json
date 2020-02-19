@@ -1,8 +1,11 @@
 {
-  "name": "backend",
+  "name": "techst-backend",
   "version": "1.0.0",
-  "description": "Backend used for the Technical Test (the Techst for those in the know)",
-  "main": "index.js",
+  "description": "Backend used for the Technical Test ('the Techst' for those in the know)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oncedotapp/techst.git"
+  },
   "scripts": {
     "dev": "ts-node-dev --transpileOnly --watch src src/index.ts",
     "lint": "eslint --ext ts src/"

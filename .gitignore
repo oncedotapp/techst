@@ -1,8 +1,14 @@
 node_modules/
 generated/
 dist/
+build/
+coverage/
 .vscode/
 
+stats.json
+.pnp
+.pnp.js
 *.env
 .DS_Store
 *.swp
+npm-debug.log*

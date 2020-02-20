@@ -16,7 +16,7 @@ export default styled.input<Props>`
       ? css<Props>`
           border: 2px solid ${p => (p.error ? '#d54a00' : '#0046c6')};
         `
-      : css<Props>`
+      : css`
           border: 1px solid rgba(25, 29, 36, 0.2);
         `}
   caret-color: ${props => (props.error ? '#d54a00' : '#0046c6')};

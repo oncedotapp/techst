@@ -2,6 +2,8 @@
 
 PRISMA_SERVER=${PRISMA_SERVER:?"PRISMA_SERVER is required to make this image work"}
 
+npm install
+
 curl -sf ${PRISMA_SERVER}/status > /dev/null
 
 while [ $? != 0 ]; do

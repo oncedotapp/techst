@@ -25,7 +25,7 @@
     "strictFunctionTypes": false,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "types": ["node", "webpack-env"],
+    "types": ["node", "webpack-env", "jest"],
     "pretty": true,
     "removeComments": true,
     "sourceMap": true

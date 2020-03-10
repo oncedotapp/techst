@@ -7,14 +7,11 @@ const prettierOptions = JSON.parse(
 
 module.exports = {
   parser: '@typescript-eslint/parser',
-  // extends: ['airbnb', 'prettier', 'prettier/react'],
-  // plugins: ['prettier', 'redux-saga', 'react', 'react-hooks', 'jsx-a11y'],
   plugins: [
     '@typescript-eslint',
     'prettier',
     'react',
     'react-hooks',
-    'jsx-a11y',
   ],
   extends: [
     'airbnb-typescript',
@@ -63,21 +60,6 @@ module.exports = {
         SwitchCase: 1,
       },
     ],
-    'jsx-a11y/aria-props': 2,
-    'jsx-a11y/heading-has-content': 0,
-    'jsx-a11y/label-has-associated-control': [
-      2,
-      {
-        // NOTE: If this error triggers, either disable it or add
-        // your custom components, labels and attributes via these options
-        // See https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md
-        controlComponents: ['Input'],
-      },
-    ],
-    'jsx-a11y/label-has-for': 0,
-    'jsx-a11y/mouse-events-have-key-events': 2,
-    'jsx-a11y/role-has-required-aria-props': 2,
-    'jsx-a11y/role-supports-aria-props': 2,
     'newline-per-chained-call': 0,
     'no-confusing-arrow': 0,
     'no-console': 1,
@@ -98,12 +80,7 @@ module.exports = {
     'react/self-closing-comp': 0,
     'react/sort-comp': 0,
     'react/prop-types': 0,
-    '@typescript-eslint/explicit-function-return-type': [
-      'error',
-      {
-        allowExpressions: true
-      },
-]
+    '@typescript-eslint/explicit-function-return-type': 0
   },
   settings: {
     'import/resolver': {
@@ -111,25 +88,5 @@ module.exports = {
         config: './internals/webpack/webpack.prod.babel.js',
       },
     },
-    // 'react': {
-    //   'createClass': 'createReactClass', // Regex for Component Factory to use,
-    //                                      // default to 'createReactClass'
-    //   'pragma': 'React',  // Pragma to use, default to 'React'
-    //   'version': 'detect', // React version. 'detect' automatically picks the version you have installed.
-    //                        // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
-    //                        // default to latest and warns if missing
-    //                        // It will default to 'detect' in the future
-    //   'flowVersion': '0.53' // Flow version
-    // },
-    // 'propWrapperFunctions': [
-    //     // The names of any function used to wrap propTypes, e.g. `forbidExtraProps`. If this isn't set, any propTypes wrapped in a function will be skipped.
-    //     'forbidExtraProps',
-    //     {'property': 'freeze', 'object': 'Object'},
-    //     {'property': 'myFavoriteWrapper'}
-    // ],
-    // 'linkComponents': [
-    //   'Hyperlink',
-    //   {'name': 'Link', 'linkAttribute': 'to'}
-    // ]
   },
 };

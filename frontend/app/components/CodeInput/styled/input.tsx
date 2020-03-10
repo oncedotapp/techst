@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components';
 
 export type Props = {
   error?: boolean;
-  idx: number;
-  total: number;
   value?: string;
 };
 
@@ -23,7 +21,7 @@ export default styled.input<Props>`
   border-radius: 10px;
   background-color: #ffffff;
   box-shadow: 0 10px 10px -5px rgba(25, 29, 36, 0.2);
-  margin: ${props => (props.idx !== Math.floor(props.total / 2) - 1 ? '0 9px' : '0 36px 0 9px')};
+  margin: 0 9px;
   color: #191d24;
   font-family: 'SF UI Display';
   font-size: 36px;

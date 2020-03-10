@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export default styled.form`
+  display: flex;
+  flex-direction: row;
   background: #ffffff;
   padding: 42px;
   border-radius: 12px;

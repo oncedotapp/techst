@@ -9,15 +9,15 @@ export default styled.input<Props>`
   box-sizing: border-box;
   height: 102px;
   width: 62px;
-  ${props =>
+  ${(props) =>
     props.value
       ? css<Props>`
-          border: 2px solid ${p => (p.error ? '#d54a00' : '#0046c6')};
+          border: 2px solid ${(p) => (p.error ? '#d54a00' : '#0046c6')};
         `
       : css`
           border: 1px solid rgba(25, 29, 36, 0.2);
         `}
-  caret-color: ${props => (props.error ? '#d54a00' : '#0046c6')};
+  caret-color: ${(props) => (props.error ? '#d54a00' : '#0046c6')};
   border-radius: 10px;
   background-color: #ffffff;
   box-shadow: 0 10px 10px -5px rgba(25, 29, 36, 0.2);

@@ -4,7 +4,6 @@ import { promisify } from 'util';
 
 import { REDIS_HOST, REDIS_PORT } from '../../config/env';
 
-
 export const REDIS = Symbol('RedisClient');
 
 export type RedisProvider = {

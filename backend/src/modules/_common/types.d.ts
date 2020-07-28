@@ -1,1 +1,1 @@
-export type Empty = {};
+export type Empty = Record<string, unknown>;

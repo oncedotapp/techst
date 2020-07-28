@@ -18,9 +18,9 @@ export const toDo: React.FC = () => (
   <CodeInput total={number('Code length', 4)} error={false} onCodeFull={action('Code to send')} />
 );
 
-export const input = () => <Input />;
+export const input: React.FC = () => <Input />;
 
-export const formWithInputs = () => (
+export const formWithInputs: React.FC = () => (
   <Form>
     <Input />
     <Input />

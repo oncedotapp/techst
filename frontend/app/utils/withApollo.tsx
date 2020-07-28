@@ -1,10 +1,12 @@
 import React from 'react';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from '@apollo/client';
 
 import { apolloClient } from '../apollo';
 
-const ApolloDecorator = (storyFn: () => JSX.Element): JSX.Element => (
-  <ApolloProvider client={apolloClient}>{storyFn()}</ApolloProvider>
+const ApolloDecorator = (Component: () => JSX.Element): JSX.Element => (
+  <ApolloProvider client={apolloClient}>
+    <Component />
+  </ApolloProvider>
 );
 
 export default ApolloDecorator;

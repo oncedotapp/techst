@@ -9,7 +9,7 @@ const webpack = require('webpack');
 
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-module.exports = options => ({
+module.exports = (options) => ({
   mode: options.mode,
   entry: options.entry,
   output: {
@@ -121,7 +121,13 @@ module.exports = options => ({
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
     }),
-    new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true }),
+    new ForkTsCheckerWebpackPlugin({
+      eslint: {
+        enabled: true,
+        files: 'app/**/*',
+      },
+      issue: { scope: 'all' },
+    }),
   ]),
   resolve: {
     modules: ['node_modules', 'app'],

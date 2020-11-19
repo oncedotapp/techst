@@ -37,14 +37,17 @@ We won't be asking you to do the design for this, but to make all the logical pa
 You will code inside this file [frontend/app/components/CodeInput/index.tsx](frontend/app/components/CodeInput/index.tsx) (for the first part at least). It's fine if you're not totally comfortable with Typescript, that's what peer-programming is made for :smile:
 
 It looks indeed kinda dumb for now, here's what you will need to do _(in no specific order of course)_:
-- Make the inputs only accept **1 digit** per box
-- Automatically move the cursor to the next one once a box has been filled
-- If the last box is filled, trigger the `onCodeFull` function sent as prop to the component (you have its signature on top of the file if ever)
-- Whatever box the user clicks on, the cursor must be set at the left-most empty box
-- If the user tries to paste its code, it should fill as many empty boxes as it can
-- Let's say you have a 6-digit code and it's already full with `9876`, pasting `123456` will trigger the `onCodeFull` function with `987612`
-- Backspacing in one of the box deletes the content of the last filled box and moves the cursor to it
-- If the CodeInput component receives the prop `error`, it has to be forwarded to the boxes so they change their style accordingly
+- Clicking on an Input should focus the left-most empty Input
+- An Input should:
+  - Only accept **1 digit**
+  - Move the cursor to the next one _(focus the Input on the right)_
+  - Delete its left neighbour content and focus it
+- If all the Inputs are filled, trigger the `onCodeFull` function _(sent as prop)_
+- **_BONUS:_** If the user tries to paste its code, it should fill as many empty Inputs as it can.
+
+### If you manage to reach this last bullet, you can continue down below!
+
+---
 
 As you can see, we're visualising our code using [Storybook](https://storybook.js.org), but [wouldn't it be nice](https://www.youtube.com/watch?v=lD4sxxoJGkA) if we could send an API request when `onCodeFull` is being triggered?
 

@@ -8,6 +8,6 @@ type CodeInputProps = {
 
 export function CodeInput({ totalDigits, onCodeFull }: CodeInputProps): JSX.Element {
   return (
-    <>Code your component here!</>
+    <>Code here! (src/CodeInput.tsx)</>
   );
 }

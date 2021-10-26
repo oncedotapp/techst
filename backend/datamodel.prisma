@@ -1,9 +1,0 @@
-type User {
-  id: ID! @id @unique
-  updatedAt: DateTime! @updatedAt
-  createdAt: DateTime! @createdAt
-  email: String! @unique
-  picture: String
-  name: String
-  description: String
-}

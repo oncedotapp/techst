@@ -20,8 +20,8 @@ export const Input = styled.input<InputProps>`
   border-radius: 8px;
   background-color: #ffffff;
   box-shadow: 0 10px 10px -5px rgba(25, 29, 36, 0.2);
-  margin: 0 8px;
   color: #191d24;
+  font-family: Montserrat;
   font-size: 36px;
   font-weight: 500;
   line-height: 1.2;

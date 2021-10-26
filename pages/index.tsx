@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import styled from 'styled-components';
 
 import { CodeInput } from '../src/CodeInput';
@@ -10,6 +10,20 @@ const MainWrapper = styled.main`
   flex-direction: column;
   gap: 32px;
   margin-top: 120px;
+`;
+
+const ResetButton = styled.button`
+  padding: 16px;
+  border: none;
+  outline: none;
+  background: #cc3300;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:active {
+    opacity: 0.9;
+  }
 `;
 
 const DigitWrapper = styled.div`
@@ -33,6 +47,7 @@ const DigitWrapper = styled.div`
 const Button = styled.button`
   font-size: 32px;
   border: none;
+  outline: none;
   background: rgba(0, 0, 0, 0.2);
   min-width: 48px;
   max-width: 48px;
@@ -59,19 +74,30 @@ const CodeWrapper = styled.div`
 
 export default function Playground(): JSX.Element {
   const [code, setCode] = useState('');
+  const [timesSent, setTimesSent] = useState(0);
   const [totalDigits, setTotalDigits] = useState(6);
-  const onCodeFull = (newCode: string) => setCode(newCode);
+  const onCodeFull = useCallback((newCode: string) => {
+    setCode(c => {
+      if (c !== newCode) {
+        setTimesSent(0);
+      } else {
+        setTimesSent(t => t + 1);
+      }
+      return newCode;
+    })
+  }, []);
   
   return (
     <MainWrapper>
       <CodeInput totalDigits={totalDigits} onCodeFull={onCodeFull} />
+      <ResetButton onClick={() => setCode('')}>RESET CODE</ResetButton>
       <DigitWrapper>
         <Button onClick={() => setTotalDigits(d => Math.max(0, d - 1))}>-</Button>
         <div>totalDigits: {totalDigits}</div>
         <Button onClick={() => setTotalDigits(d => d + 1)}>+</Button>
       </DigitWrapper>
       {code ? (
-        <CodeWrapper>Last code sent is: <span>{code}</span></CodeWrapper>
+        <CodeWrapper>Last code sent is: <span>{code}</span><i style={{ marginLeft: 8, fontSize: 12, color: '#929292' }}>render #{timesSent} at: {Date.now()}</i></CodeWrapper>
       ) : (
         <CodeWrapper>
           No code has been sent yet!

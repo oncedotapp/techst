@@ -70,6 +70,12 @@ const CodeWrapper = styled.div`
     border-radius: 2px;
     padding: 0 4px;
   }
+
+  i {
+    margin-left: 8px;
+    font-size: 12px;
+    color: #929292;
+  }
 `;
 
 export default function Playground(): JSX.Element {
@@ -97,7 +103,7 @@ export default function Playground(): JSX.Element {
         <Button onClick={() => setTotalDigits(d => d + 1)}>+</Button>
       </DigitWrapper>
       {code ? (
-        <CodeWrapper>Last code sent is: <span>{code}</span><i style={{ marginLeft: 8, fontSize: 12, color: '#929292' }}>render #{timesSent} at: {Date.now()}</i></CodeWrapper>
+        <CodeWrapper>Last code sent is: <span>{code}</span><i>render #{timesSent} at: {Date.now()}</i></CodeWrapper>
       ) : (
         <CodeWrapper>
           No code has been sent yet!

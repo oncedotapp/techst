@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: Montserrat, monospace;
     height: 100vh;
-    background: #FFE9F0;
+    background: #e9e9e9;
     color: #191d24;
   }
 `;

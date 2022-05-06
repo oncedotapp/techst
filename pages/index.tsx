@@ -16,7 +16,7 @@ const ResetButton = styled.button`
   padding: 16px;
   border: none;
   outline: none;
-  background: #cc3300;
+  background: #d65612;
   font-size: 20px;
   border-radius: 4px;
   cursor: pointer;
